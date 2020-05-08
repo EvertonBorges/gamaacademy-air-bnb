@@ -15,3 +15,11 @@ body {
     color: #000;
     text-decoration: underline;
 }
+
+.card {
+    height: 100%;
+}
+
+.card-img-top {
+    height: 250px;
+}
