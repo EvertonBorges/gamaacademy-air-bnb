@@ -23,3 +23,7 @@ body {
 .card-img-top {
     height: 250px;
 }
+
+#cards:last-child {
+    margin-bottom: 120px;
+}

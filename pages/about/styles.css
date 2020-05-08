@@ -15,3 +15,25 @@ body {
     color: #000;
     text-decoration: underline;
 }
+
+a i {
+    font-size: 1.5rem;
+}
+
+.text__primary__color {
+    color: #ff5a5f;
+}
+
+.text__skill__name {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.fa-unity {
+    color: #000;
+}
+
+.pointer {
+    cursor: pointer;
+}
