@@ -49,7 +49,7 @@ function getCard(data) {
                     <h6 class="card-subtitle mb-2 text-muted">${property_type}</h6>
                     <p class="card-text">${name}</p>
                     <div class="d-flex justify-content-center align-items-end">
-                        <a href="#" class="btn btn-primary">Alugar</a>
+                        <a href="#" class="btn btn-outline-danger">Alugar</a>
                     </div>
                 </div>
             </div>
