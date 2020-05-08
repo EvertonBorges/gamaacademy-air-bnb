@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Aluguéis por Temporada, Acomodações, Experiências e Lugares - Airbnb">
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="../../favicon.png" />
 
     <title>Aluguéis por Temporada, Acomodações, Experiências e Lugares - Airbnb</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<body onresize="onResizeEvent()" onscroll="onScrollEvent(); onNavbarScrollEvent();">
+<body onscroll="onNavbarScrollEvent();">
     <div class="alert alert-light alert-top text-center" role="alert">
         <div class="container">
             Confira notícias sobre o COVID-19 através do nosso portal. <a target="_blank" href="https://desafiocovid19-evertonborges.netlify.app/">Saiba mais</a>
@@ -23,15 +23,15 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" width="120" height="50" alt="">
+                <img src="../../img/logo.png" width="120" height="50" alt="">
             </a>
             
             <div class="d-flex justify-content-end">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/pages/contact/contact.html">Contato</a>
                     </li>
                     <li class="nav-item">
@@ -45,15 +45,15 @@
     <nav id="navbar-fixed" class="navbar navbar-expand-lg navbar-light fixed-top d-none bg-white">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" width="120" height="50" alt="">
+                <img src="../../img/logo.png" width="120" height="50" alt="">
             </a>
             
             <div class="d-flex justify-content-end">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/pages/contact/contact.html">Contato</a>
                     </li>
                     <li class="nav-item">
@@ -65,14 +65,15 @@
     </nav>
 
     <main class="container">
-        <section id="cards"></section>
+        <section>
+
+        </section>
     </main>
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/navbar.js"></script>
+    <script src="../../js/navbar.js"></script>
 </body>
 </html>
