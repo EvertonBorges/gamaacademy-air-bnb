@@ -23,7 +23,11 @@ function onScrollEvent() {
     }
 
     if (navbar && !isVisible(navbar)) {
-        
+        const navbarFixed = document.getElementById('navbar-fixed');
+        navbarFixed.classList.remove('d-none');
+    } else if (navbar && isVisible(navbar)) {
+        const navbarFixed = document.getElementById('navbar-fixed');
+        navbarFixed.classList.add('d-none');
     }
 }
 
