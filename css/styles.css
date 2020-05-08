@@ -4,6 +4,11 @@ body {
 
 .alert-light {
     background-color: #F7F7F7;
+    font-size: 0.9rem;
+}
+
+.alert-top {
+    margin-bottom: 0;
 }
 
 .alert-light a {
