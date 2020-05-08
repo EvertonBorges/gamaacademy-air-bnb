@@ -9,7 +9,6 @@ function onResizeEvent() {
 }
 
 function onScrollEvent() {
-    const navbar = document.getElementById('navbar');
     const loader = document.getElementById('loader');
 
     if (loader && isVisible(loader) && !isLoading) {
@@ -20,14 +19,6 @@ function onScrollEvent() {
             isLoading = false;
             loader.remove();
         }, 500);
-    }
-
-    if (navbar && !isVisible(navbar)) {
-        const navbarFixed = document.getElementById('navbar-fixed');
-        navbarFixed.classList.remove('d-none');
-    } else if (navbar && isVisible(navbar)) {
-        const navbarFixed = document.getElementById('navbar-fixed');
-        navbarFixed.classList.add('d-none');
     }
 }
 
