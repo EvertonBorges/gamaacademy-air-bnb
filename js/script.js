@@ -54,10 +54,8 @@ function incrementCardsAmount() {
     }
 }
 
-function getCard(data) {
-    const { photo, name, description, propertyType, price, maxPrice, details } = data;
-    const textPrice = price === maxPrice ? price : `${price}~${maxPrice}`;
-    const icons = details && details.map(detail => {
+function getIcons(details) {
+    return details && details.map(detail => {
         switch(detail) {
             case 'Ar-condicionado': return 'snowflake';
             case 'Estacionamento': case 'Estacionamento pago': return 'parking';
@@ -81,8 +79,13 @@ function getCard(data) {
             default: return 'wifi';
         }
     });
+}
 
-    const maxSize = details.length;
+function getCard(data) {
+    const { photo, name, description, propertyType, price, maxPrice, details } = data;
+    const textPrice = price === maxPrice ? price : `${price}~${maxPrice}`;
+    const icons = getIcons(details);
+
     let inMaxSize = false;
 
     return `
