@@ -8,6 +8,16 @@ let datasFiltered = [];
 
 function onResizeEvent() {
     reloadCards();
+
+    const width = window.innerWidth;
+    const filterHtml = document.getElementById('filters');
+    if (width > 992) {
+        filterHtml.classList.remove('d-none');
+        filterHtml.classList.add('d-flex');
+    } else {
+        filterHtml.classList.add('d-none');
+        filterHtml.classList.remove('d-flex');
+    }
 }
 
 function onScrollEvent() {
