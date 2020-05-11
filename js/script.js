@@ -4,6 +4,8 @@ const currencyFormatter = new Intl.NumberFormat('pt-BR', { style: 'currency', cu
 let cardsAmount = 0;
 let isLoading = false;
 
+let datasFiltered = [];
+
 function onResizeEvent() {
     reloadCards();
 }
@@ -31,10 +33,11 @@ function getAmountRows(amountCards, amountColumns) {
 }
 
 function incrementCardsAmount() {
+    // const dataSize = datasFiltered.length;
     cardsAmount += cardsAmount === 0 ? 9 : 3;
 
-    if (cardsAmount >= datas.length) {
-        cardsAmount = datas.length;
+    if (cardsAmount >= datasFiltered.length) {
+        cardsAmount = datasFiltered.length;
     }
 }
 
@@ -146,6 +149,60 @@ function getDetails(details = '') {
     return detailsList;
 }
 
+function getDataFiltered(text) {
+    if (text) {
+        return datas.filter(data => 
+            data.name.includes(text) || 
+            data.description.includes(text) || 
+            data.city.includes(text) || 
+            data.state.includes(text) || 
+            data.propertyType.includes(text));
+    } else {
+        return [...datas];
+    }
+}
+
+function reloadCardsByFilter(event) {
+    const text = event.target.value;
+    datasFiltered = getDataFiltered(text);
+
+    cardsAmount = 0;
+
+    const cardsHtml = document.getElementById('cards');
+    const width = window.innerWidth;
+
+    cardsHtml.innerHTML = '';
+    
+    let actualIndex = cardsAmount;
+    const amountColumns = getAmountColumns(width);
+    const lastAmountRow = getAmountRows(cardsAmount, amountColumns);
+
+    incrementCardsAmount();
+    const amountRows = getAmountRows(cardsAmount, amountColumns);
+
+    for (let i = lastAmountRow; i < amountRows; i++) {
+        const row = document.createElement('div');
+        row.className = 'row mb-5';
+        for (let j = 0; j < amountColumns && actualIndex < cardsAmount; j++) {
+            const { photo, name, description, propertyType, price, maxPrice, details } = datasFiltered[actualIndex];
+            const detailsList = getDetails(details);
+            const formattedPrice = currencyFormatter.format(price);
+            const formattedMaxPrice = currencyFormatter.format(maxPrice)
+            const card = getCard({ photo, name, description, propertyType, price: formattedPrice, maxPrice: formattedMaxPrice, details: detailsList });
+
+            row.innerHTML += card;
+            actualIndex++;
+        }
+
+        cardsHtml.appendChild(row);
+    }
+
+    if (cardsAmount < datasFiltered.length) {
+        const loader = createLoader();
+        cardsHtml.appendChild(loader);
+    }
+}
+
 function reloadCards() {
     const cardsHtml = document.getElementById('cards');
     const width = window.innerWidth;
@@ -161,7 +218,7 @@ function reloadCards() {
         row.className = 'row mb-5';
 
         for (let j = 0; j < amountColumns && actualIndex < cardsAmount; j++) {
-            const { photo, name, propertyType, price, maxPrice, details, description } = datas[actualIndex];
+            const { photo, name, propertyType, price, maxPrice, details, description } = datasFiltered[actualIndex];
             const detailsList = getDetails(details);
             const formattedPrice = currencyFormatter.format(price);
             const formattedMaxPrice = currencyFormatter.format(maxPrice)
@@ -174,7 +231,7 @@ function reloadCards() {
         cardsHtml.appendChild(row);
     }
 
-    if (cardsAmount < datas.length) {
+    if (cardsAmount < datasFiltered.length) {
         const loader = createLoader();
         cardsHtml.appendChild(loader);
     }
@@ -195,7 +252,7 @@ function loadCards() {
         const row = document.createElement('div');
         row.className = 'row mb-5';
         for (let j = 0; j < amountColumns && actualIndex < cardsAmount; j++) {
-            const { photo, name, description, propertyType, price, maxPrice, details } = datas[actualIndex];
+            const { photo, name, description, propertyType, price, maxPrice, details } = datasFiltered[actualIndex];
             const detailsList = getDetails(details);
             const formattedPrice = currencyFormatter.format(price);
             const formattedMaxPrice = currencyFormatter.format(maxPrice)
@@ -208,7 +265,7 @@ function loadCards() {
         cardsHtml.appendChild(row);
     }
 
-    if (cardsAmount < datas.length) {
+    if (cardsAmount < datasFiltered.length) {
         const loader = createLoader();
         cardsHtml.appendChild(loader);
     }
@@ -244,6 +301,7 @@ fetch('https://v2-api.sheety.co/65262d7029ebf13f074f328915540e37/airbnbClone/loc
     if (response.ok) {
         response.json().then(body => {
             datas.push(...body.locals);
+            datasFiltered.push(...datas);
             const cardsHtml = document.getElementById('cards');
             cardsHtml.innerHTML = '';
 

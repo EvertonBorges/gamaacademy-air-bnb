@@ -47,6 +47,60 @@ a.navbar-brand {
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
 }
 
+.input-group-field {
+    min-width: 33%;
+    max-width: 33%;
+    border-style: inset;
+    border-width: 2px;
+    border-color: transparent;
+    border-radius: 8px;
+    transition: ease-in-out 0.3s all;
+}
+
+.input-group-field:hover {
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group-field:hover label {
+    cursor: pointer;
+}
+
+.input-field {
+    transition: ease-in-out 0.3s all;
+    border-style: solid;
+    border-width: 2px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: rgba(0, 0, 0, 0.25);
+}
+
+.input-group-field:hover .input-field {
+    border-color: transparent;
+}
+
+.input-field input {
+    width: 90%;
+}
+
+.input-field input:focus {
+    border: none;
+    outline: none;
+}
+
+.input-field.no-border {
+    border: none;
+    outline: none;
+}
+
+.label-search {
+    font-size: 0.65rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+}
+
 .card {
     height: 530px;
     border-radius: 8px;
@@ -115,6 +169,7 @@ a.navbar-brand {
 
 .btn-airbnb-radial {
     color: white;
+    font-size: 0.9rem;
     min-width: 100px;
     background-size: 200% 200% !important;
     background-image: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%) !important;
@@ -123,6 +178,10 @@ a.navbar-brand {
 .btn-airbnb-radial:hover {
     background-image: radial-gradient(circle at center, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100%) !important;
     color: white;
+}
+
+.btn-airbnb-radial i {
+    font-size: 0.9rem;
 }
 
 .card-reserve {

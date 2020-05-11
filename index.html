@@ -80,6 +80,32 @@
     </nav>
 
     <main class="container">
+        <section class="shadow-sm bg-white rounded d-flex justify-content-between mt-3 mb-5">
+            <section class="d-flex justify-content-left w-100">
+                <div class="input-group-field pl-4">
+                    <div class="input-field mt-2 mb-2 mr-0">
+                        <label class="label-search mb-0">LOCALIZAÇÃO</label>
+                        <input class="border-0 mr-2" type="text" name="textFilter" onchange="reloadCardsByFilter(event)" placeholder="Para onde você vai?">
+                    </div>
+                </div>
+                <div class="input-group-field pl-4 mr-0">
+                    <div class="input-field mt-2 mb-2 mr-0">
+                        <label class="label-search mb-0">CHECK-IN/CHECKOUT</label>
+                        <input class="border-0" type="date" placeholder="Insira as datas">
+                    </div>
+                </div>
+                <div class="input-group-field pl-4 mr-0">
+                    <div class="input-field no-border mt-2 mb-2 mr-0">
+                        <label class="label-search mb-0">HÓSPEDES</label>
+                        <input class="border-0" type="text" placeholder="Insira o número de hóspedes">
+                    </div>
+                </div>
+            </section>
+            <div class="d-flex justify-content-center align-self-center m-2 h-50">
+                <a href="#" class="btn btn-airbnb-radial" type="submit" onmousemove="onMouseMoveEvent(event)"><i class="fas fa-search"></i> Buscar</a>
+            </div>
+        </section>
+
         <section id="cards">
             <div class="row d-flex justify-content-center">
                 <div id="loader" class="spinner-border"><span class="sr-only">Carregando...</span></div>
