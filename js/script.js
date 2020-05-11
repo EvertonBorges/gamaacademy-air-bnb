@@ -172,8 +172,8 @@ function getDataFiltered(text) {
     }
 }
 
-function reloadCardsByFilter(event) {
-    const text = event.target.value;
+function reloadCardsByFilter() {
+    const text = document.getElementById('filterText').value;
     datasFiltered = getDataFiltered(text);
 
     cardsAmount = 0;
