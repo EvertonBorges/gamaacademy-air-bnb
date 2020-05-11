@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Aluguéis por Temporada, Acomodações, Experiências e Lugares - Airbnb">
-    <link rel="stylesheet" href="../../css/all.css" />
-    <link rel="stylesheet" href="../../css/brands.css" />
     <link rel="shortcut icon" type="image/png" href="../../favicon.png" />
-
+    
     <title>Aluguéis por Temporada, Acomodações, Experiências e Lugares - Airbnb</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../../css/all.css" />
+    <link rel="stylesheet" href="../../css/brands.css" />
 </head>
 <body onscroll="onNavbarScrollEvent()" onresize="onNavbarScrollEvent()">
     <div class="alert alert-light alert-top text-center" role="alert">
@@ -26,19 +26,26 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="../../img/logo.png" width="120" height="50" alt="">
+                <i class="fab fa-airbnb text-danger"></i>
+                <span class="text-danger">airbnb</span>
             </a>
             
             <div class="d-flex justify-content-end">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                    <li class="nav-item mr-3">
+                        <a href="#" class="nav-link rounded-pill pl-3 pr-3"><i class="fas fa-globe mr-2"></i><i class="fas fa-chevron-down"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pages/contact/contact.html">Contato</a>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link rounded-pill" href="/">Home</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/pages/about/about.html">Sobre</a>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link rounded-pill" href="/pages/contact/contact.html">Contato</a>
+                    </li>
+                    <li class="nav-item mr-3 active">
+                        <a class="nav-link rounded-pill" href="/pages/about/about.html">Sobre</a>
+                    </li>
+                    <li class="nav-item btn border border-light shadow rounded-pill">
+                        <a href="#" class="text-dark">Cadastre-se</a>
                     </li>
                 </ul>
             </div>
@@ -47,20 +54,27 @@
 
     <nav id="navbar-fixed" class="navbar navbar-expand-lg navbar-light fixed-top d-none bg-white">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="../../img/logo.png" width="120" height="50" alt="">
+            <a class="navbar-brand" href="/">
+                <i class="fab fa-airbnb text-danger"></i>
+                <span class="text-danger">airbnb</span>
             </a>
             
             <div class="d-flex justify-content-end">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                    <li class="nav-item mr-3">
+                        <a href="#" class="nav-link rounded-pill pl-3 pr-3"><i class="fas fa-globe mr-2"></i><i class="fas fa-chevron-down"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/pages/contact/contact.html">Contato</a>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link rounded-pill" href="/">Home</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/pages/about/about.html">Sobre</a>
+                    <li class="nav-item mr-3">
+                        <a class="nav-link rounded-pill" href="/pages/contact/contact.html">Contato</a>
+                    </li>
+                    <li class="nav-item mr-3 active">
+                        <a class="nav-link rounded-pill" href="/pages/about/about.html">Sobre</a>
+                    </li>
+                    <li class="nav-item btn border border-light shadow rounded-pill">
+                        <a href="#" class="text-dark">Cadastre-se</a>
                     </li>
                 </ul>
             </div>
@@ -78,17 +92,17 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 mb-3">
-                            <a target="_blank" href="https://www.linkedin.com/in/everton-soares-borges" title="Linkedin"><i class="fab fa-linkedin text__primary__color">/everton-soares-borges</i></a>
+                            <a class="text-social-media" target="_blank" href="https://www.linkedin.com/in/everton-soares-borges" title="Linkedin"><i class="fab fa-linkedin text__primary__color">/everton-soares-borges</i></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 mb-3">
-                            <a target="_blank" href="https://github.com/EvertonBorges" title="Github"><i class="fab fa-github text__primary__color">/EvertonBorges</i></a>
+                            <a class="text-social-media" target="_blank" href="https://github.com/EvertonBorges" title="Github"><i class="fab fa-github text__primary__color">/EvertonBorges</i></a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12 mb-3">
-                            <a target="_blank" href="https://itch.io/profile/evertonborges" title="itch.io"><i class="fab fa-itch-io text__primary__color">/evertonborges</i></a>
+                            <a class="text-social-media" target="_blank" href="https://itch.io/profile/evertonborges" title="itch.io"><i class="fab fa-itch-io text__primary__color">/evertonborges</i></a>
                         </div>
                     </div>
                 </div>

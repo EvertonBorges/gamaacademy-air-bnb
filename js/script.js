@@ -22,22 +22,6 @@ function onScrollEvent() {
     }
 }
 
-function onMouseMoveEvent(event) {
-    const element = event.srcElement;
-    if (element.classList.contains('btn-airbnb-radial')) {
-        const mouseX = event.offsetX;
-        const mouseY = event.offsetY;
-
-        const width = element.clientWidth;
-        const height = element.clientHeight;
-
-        const calcX = mouseX / width * 100;
-        const calcY = mouseY / height * 100;
-
-        element.style = `background-position: calc((100 - var(--mouse-x, 0)) * 1%) calc((100 - var(--mouse-y, 0)) * 1%); --mouse-x:${calcX}; --mouse-y:${calcY};`;
-    }
-}
-
 function getAmountColumns(width) {
     return width < 768 ? 1 : (width < 992 ? 2 : 3);
 }
